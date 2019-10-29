@@ -1,7 +1,7 @@
 "use strict"
 
 const home = require('./.next/serverless/pages/index.js');
-const about = require('./.next/serverless/pages/about.js');
+const vote = require('./.next/serverless/pages/vote.js');
 
 module.exports = (context) => {
   const contentPath = `${__dirname}/static`;
@@ -13,7 +13,7 @@ module.exports = (context) => {
 
   context.servePages({
     '/': home,
-    '/about': about,
+    '/vote': vote,
   });
 
   // Everything not served as Next.js pages will be served as static

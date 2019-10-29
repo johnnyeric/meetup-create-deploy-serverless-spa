@@ -1,18 +1,18 @@
 import { css } from '@emotion/core';
+import { useQuery, useSubscription } from '@apollo/react-hooks';
+import get from 'lodash/get';
+import gql from 'graphql-tag';
 import join from 'proper-url-join';
 import Link from 'next/link';
 import React from 'react';
 import styled from '@emotion/styled';
-import withGraphQL from '../lib/withGraphQL';
-import gql from 'graphql-tag';
-import { useQuery, useSubscription } from '@apollo/react-hooks';
 import TopicList from '../components/TopicList';
-import get from 'lodash/get';
+import withGraphQL from '../lib/withGraphQL';
 
 const BASE_URL = process.env.BASE_URL;
 
 const GET_CURRENT_PRESENTATION = gql`
-  query {
+  subscription {
     meetup_presentation(limit: 1, order_by: {created_at: desc}) {
       id
       topic {
@@ -39,7 +39,7 @@ const Wrapper = styled.div`
 `;
 
 export default withGraphQL(() => {
-  const { data: currentPresentation } = useQuery(GET_CURRENT_PRESENTATION);
+  const { data: currentPresentation } = useSubscription(GET_CURRENT_PRESENTATION);
   const { data, loading } = useSubscription(GET_TOPICS);
 
   const currentTopic = get(currentPresentation, 'meetup_presentation[0].topic');
@@ -49,7 +49,7 @@ export default withGraphQL(() => {
     <>
       <div>
         <Wrapper>
-          <Link href='/about' as={join(BASE_URL,'/about')}><a>About</a></Link>
+          <Link href='/vote' as={join(BASE_URL,'/vote')}><a>Vote</a></Link>
           <div>Current Topic: {currentTopic && currentTopic.title }</div>
           {loading &&  (<>Loading...</>)}
         </Wrapper>
