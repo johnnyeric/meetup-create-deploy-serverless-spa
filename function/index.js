@@ -64,6 +64,6 @@ app.get('/', function (req, res) {
   res.send('Hello World - For Event Triggers, try a POST request?');
 });
 
-var server = app.listen(process.env.PORT, function () {
+var server = app.listen(process.env.PORT || 8080, function () {
     console.log("server listening");
 });
