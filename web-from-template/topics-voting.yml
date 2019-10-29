@@ -1,0 +1,9 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://openfaas.tools
+functions:
+  topics-voting:
+    lang: serverless-nextjs
+    handler: ./topics-voting
+    image: gcr.io/johnnyeric/topics-voting:latest
