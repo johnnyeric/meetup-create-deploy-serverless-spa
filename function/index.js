@@ -19,6 +19,10 @@ const getCurrentPresentation = graph(`
         id
         title
       }
+      question {
+        id
+        title
+      }
     }
   }
 `);
@@ -26,6 +30,16 @@ const getCurrentPresentation = graph(`
 const setTopicToVote = graph(`
   mutation update_meetup_vote($topic_id: uuid, $vote_id: uuid) {
     update_meetup_vote(_set: {topic_id: $topic_id}, where: {id: {_eq: $vote_id}}) {
+      returning {
+        id
+      }
+    }
+  }
+`);
+
+const setQuestionToAnswer = graph(`
+  mutation update_meetup_answer($question_id: uuid, $answer_id: uuid) {
+    update_meetup_answer(_set: {question_id: $question_id}, where: {id: {_eq: $answer_id}}) {
       returning {
         id
       }
@@ -46,17 +60,43 @@ async function setCurrentTopic(vote) {
   }
 }
 
+async function setCurrentQuestion(answer) {
+  const { id } = answer;
+  
+  const presentationResponse = await getCurrentPresentation();
+  
+  if (presentationResponse.meetup_presentation.length) {
+    const presentation = presentationResponse.meetup_presentation[0];
+    const currentQuestionId = presentation.question.id;
+    
+    await setQuestionToAnswer({ question_id: currentQuestionId, answer_id: id});
+  }
+}
+
 app.post('/set-current-topic', async function (req, res) {
     try{
-        const topicVote = req.body.event.data.new;
+        const vote = req.body.event.data.new;
         
-        await setCurrentTopic(topicVote);
+        await setCurrentTopic(vote);
   
-        res.json(`Topic vote ${topicVote.id} handled`);
+        res.json(`Topic vote ${vote.id} handled`);
     } catch(e) {
         console.log(e);
         res.status(500).json(e.toString());
     }
+});
+
+app.post('/set-current-question', async function (req, res) {
+  try{
+      const answer = req.body.event.data.new;
+      
+      await setCurrentQuestion(answer);
+
+      res.json(`Topic vote ${answer.id} handled`);
+  } catch(e) {
+      console.log(e);
+      res.status(500).json(e.toString());
+  }
 });
 
 
