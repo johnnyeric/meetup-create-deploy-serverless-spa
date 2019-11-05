@@ -12,6 +12,8 @@
     "mdx-deck": "^3.0.13"
   },
   "dependencies": {
-    "graphql.js": "^0.6.5"
+    "graphql.js": "^0.6.5",
+    "subscriptions-transport-ws": "^0.9.16",
+    "ws": "^7.2.0"
   }
 }

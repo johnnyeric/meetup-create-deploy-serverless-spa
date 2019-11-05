@@ -3,7 +3,12 @@ import updateTopic from '../utils/updateTopic';
 
 export default ({ topic }) => {
   useEffect(() => {
-    updateTopic(topic);
+    try {
+      updateTopic(topic);
+    } catch(err) {
+      console.log(err)
+    }
+    
   }, [topic]);
   return (
     <></>

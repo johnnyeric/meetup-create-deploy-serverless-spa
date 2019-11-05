@@ -2,29 +2,206 @@
 # Serverless SPAs
 
 import SetTopic from './components/SetTopic';
+import Question from './components/Question';
+import { Image, Appear, Notes } from 'mdx-deck';
+
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
 
 ---
 
 # About Me
 
----
+- To define
 
-```jsx
-<CodeSnippet />
-```
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
 
 ---
 
+# Introduction
 
-GraphQL
+* Serverless
+* SPAs
+* GraphQL
+* Integrations
+* Deployment
+
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+
+---
+
+# Subscription
+
+<Question question={''} />
+
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+
+---
+
+# Introduction
+
+import qrcode from './static/qrcode.png';
+
+<Appear>
+  <span>Preview</span>
+  <Image size={'350px'} src={qrcode} />
+</Appear>
+
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+
+---
+
+# Serverless
+
+- Abstract complexity from managing VMs
+- Services can be easily isolated
+- Scale from 0 to n
+  - Scale up when receive requests
+  - Scale down when idle
+
+<Notes>
+  Notes about serverless
+</Notes>
+
+<SetTopic topic={'2136d37c-d1d4-4dd5-a9eb-70155576cbbe'} />
+
+---
+
+# Project template
+
+- Next.js
+  - React Framework with SSR capabilities
+  - Serverless mode - since version 8
+    - Page as an independently deployable unit (lambda).
+
+<SetTopic topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
+
+---
+
+# Project template
+
+- OpenFaaS
+  - Opensource Serverless platform
+  - Containers as unit of deployment
+  - Function templates
+
+  ![](https://miro.medium.com/max/1454/1*3e9V8u5vK1E_KHB0dk_8Nw.png)
+
+<SetTopic topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
+
+---
+
+# Project template
+
+- OpenFaaS template for Next.js on Serverless mode
+  - Base setup for functions served with Next.js on Serverless mode
+    - Easy and quick deployment of React Components
+  
+  [Create and Deploy Serverless SPAs with Next.js on OpenFaaS or Knative (Google Cloud Run)](https://medium.com/@johnnyeric/create-and-deploy-serverless-spas-with-next-js-on-openfaas-or-knative-google-cloud-run-4b32a073292b)
+
+<SetTopic topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
+
+---
+
+# GraphQL
+
+- A query language for APIs
+- Schemas
+- Realtime subscriptions
 
 <SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
 
 ---
 
-Serverless
+# GraphQL Engine
 
-<SetTopic topic={'2136d37c-d1d4-4dd5-a9eb-70155576cbbe'} />
+- A server runtime to serve the API
+- Unified endpoint
 
+<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+
+---
+
+# Hasura
+
+- OpenSource
+- Automatic GraphQL API based on PostgreSQL tables
+- Triggers
+- Remote Schemas
+- Authorization
+- 3 Factor app
+
+<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+
+---
+
+# 3 Factor App
+
+- Architecture pattern
+- Factors:
+  1. Realtime GraphQL
+  2. Reliable Eventing
+  3. Async Serverless
+
+[3 factor app](https://3factor.app/)
+
+<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+
+---
+
+# Application Architecture
+
+import architecture from './static/architecture.png';
+
+<Appear>
+  <span>Architecture Diagram</span>
+  <Image size={'350px'} src={architecture} />
+</Appear>
+
+<SetTopic topic={'8646ba53-d05d-4b88-9030-b1c88aaf47a0'} />
+
+---
+
+# Application Architecture
+
+## Main Components
+
+- Hasura instance (Hosted on Heroku)
+- Serverless function to set the current topic (Hosted on Cloud Run)
+- SPA (Hosted on Cloud Run)
+
+<SetTopic topic={'ea05d876-326c-43ae-8b75-e76ccd0e71f2'} />
+
+---
+
+[Twitter](https://twitter.com/btleyden/status/1175809403557224451?s=19)
+
+---
+
+# Hands On
+
+- Next.js Serverless Mode
+- OpenFaaS template for Next.js on Serverless mode
+- Build container image
+- Tag image to [gcr.io](http://gcr.io) registry
+- Deploy to Cloud Run
+
+<SetTopic topic={'ea05d876-326c-43ae-8b75-e76ccd0e71f2'} />
+
+---
+
+# Conclusion
+
+- Possibility to compose serverless architectures in simple ways
+- Flexibility
+
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+
+---
 
 # The end
+
+<Appear>
+  <span><h2>Questions?</h2></span>
+</Appear>
+
+<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
