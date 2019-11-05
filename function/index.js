@@ -24,8 +24,8 @@ const getCurrentPresentation = graph(`
 `);
 
 const setTopicToVote = graph(`
-  mutation update_meetup_topic_vote($topic_id: uuid, $topic_vote_id: uuid) {
-    update_meetup_topic_vote(_set: {topic_id: $topic_id}, where: {id: {_eq: $topic_vote_id}}) {
+  mutation update_meetup_vote($topic_id: uuid, $vote_id: uuid) {
+    update_meetup_vote(_set: {topic_id: $topic_id}, where: {id: {_eq: $vote_id}}) {
       returning {
         id
       }
@@ -42,7 +42,7 @@ async function setCurrentTopic(vote) {
     const presentation = presentationResponse.meetup_presentation[0];
     const currentTopicId = presentation.topic.id;
     
-    await setTopicToVote({ topic_id: currentTopicId, topic_vote_id: id});
+    await setTopicToVote({ topic_id: currentTopicId, vote_id: id});
   }
 }
 

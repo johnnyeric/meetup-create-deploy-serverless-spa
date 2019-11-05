@@ -26,8 +26,8 @@ const GET_CURRENT_PRESENTATION = gql`
 `;
 
 const VOTE = gql`
-  mutation insert_meetup_topic_vote($count: Int){
-    insert_meetup_topic_vote(objects: {vote: $count}) {
+  mutation insert_meetup_vote($count: Int){
+    insert_meetup_vote(objects: {vote: $count}) {
       returning {
         vote
         id
