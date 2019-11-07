@@ -21,6 +21,12 @@ const GET_CURRENT_PRESENTATION = gql`
         id
         title
       }
+      question {
+        id
+        title
+        option1
+        option2
+      }
     }
   }
 `;
@@ -31,6 +37,17 @@ const VOTE = gql`
       returning {
         vote
         id
+      }
+    }
+  }
+`;
+
+const ANSWER = gql`
+  mutation insert_meetup_answer($answer: Int){
+    insert_meetup_answer(objects: {answer: $answer}) {
+      returning {
+        id
+        answer
       }
     }
   }
@@ -48,8 +65,10 @@ const Wrapper = styled.div`
 export default withGraphQL(() => {
   const { data: currentPresentation, loading } = useSubscription(GET_CURRENT_PRESENTATION);
   const [vote] = useMutation(VOTE);
+  const [answer] = useMutation(ANSWER);
 
   const currentTopic = get(currentPresentation, 'meetup_presentation[0].topic');
+  const currentQuestion = get(currentPresentation, 'meetup_presentation[0].question');
 
   return (
     <ThemeProvider theme={theme}>
@@ -74,6 +93,22 @@ export default withGraphQL(() => {
           <Button variant='primary' mr={3} onClick={async () => await vote({ variables: { count: 8 }})}>
             +8
           </Button>
+
+          <br />
+          <br />
+          <br />
+          { currentQuestion && (
+            <>
+              <div>Current Question: {currentQuestion && currentQuestion.title }</div>
+              <Button variant='primary' mr={3} onClick={async () => await answer({ variables: { answer: 1 }})}>
+                {currentQuestion && currentQuestion.option1}
+              </Button>
+              <Button variant='primary' mr={3} onClick={async () => await answer({ variables: { answer: 2 }})}>
+                {currentQuestion && currentQuestion.option2}
+              </Button>
+            </>
+          )}
+          
         </Wrapper>
       </div>
     </ThemeProvider>
