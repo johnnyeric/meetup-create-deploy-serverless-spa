@@ -70,7 +70,7 @@ const TopicList = (props) => {
     return {
       ...topic,
       key: i,
-      css: 'linear-gradient(125deg, #000000 0%, #b490ca 100%)',
+      css: 'linear-gradient(125deg, #000000 0%, #000000 100%)',
       height: 100
     }
   });
