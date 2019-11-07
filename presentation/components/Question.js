@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useQuestion from '../utils/use-question-hook';
 import { SubscriptionClient } from 'subscriptions-transport-ws';
 const WebSocket = require('ws');
 
@@ -14,35 +15,51 @@ const wsclient = new SubscriptionClient(
 );
 
 export default ({ question }) => {
-  const [presentation, setPresentation] = useState({});
+  const [questions, setQuestions] = useState({});
+  const questionResponse = useQuestion(question);
   useEffect(() => {
     wsclient.request({
-      query: `subscription { 
-        meetup_presentation {
+      query: `subscription ($question_id: uuid) {
+        meetup_question_with_answers (where: {id: {_eq: $question_id}}){
           id
-          topic {
-            title
-          }
+          title
+          option1
+          option2
+          answer
+          count
         }
       }`,
+      variables: {
+        question_id: question
+      }
       // Don't forget to check for an `errors` property in the next() handler
     }).subscribe({
       next: (data) => {
-        setPresentation(data.data.meetup_presentation[0]);
+        setQuestions(data.data.meetup_question_with_answers);
       },
       error: (errors) => {
         console.error('errors', JSON.stringify(errors));
       },
     });
     
-  }, []);
+  }, [question]);
 
-  const topic = presentation && presentation.topic && presentation.topic.title;
+  const title = questionResponse && questionResponse.title;
+  const option1 = questionResponse && questionResponse.option1;
+  const option2 = questionResponse && questionResponse.option2;
+  const answer1 = questions && questions[0] && questions.filter(q => q.answer === 1)[0];
+  const answer2 = questions && questions[0] && questions.filter(q => q.answer === 2)[0];
+  const totalCount = (answer1 && answer1.count) + (answer2 && answer2.count);
+  const p1 = answer1 && parseFloat((answer1 && answer1.count) / totalCount * 100).toFixed(2);
+  const p2 = answer2 && parseFloat((answer2 && answer2.count) / totalCount * 100).toFixed(2);
 
   return (
     <>
-      <span>Hello</span>
-      <span>Topic { topic }</span>
+      <span>Quiz: {title} </span>
+      <br />
+      <span>{option1} { p1 || 0 } %</span>
+      <br />
+      <span>{option2} { p2 || 0 } %</span>
     </>
   )
 }

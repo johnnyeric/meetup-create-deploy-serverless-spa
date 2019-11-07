@@ -1,52 +1,83 @@
 # Create and Deploy
 # Serverless SPAs
 
-import SetTopic from './components/SetTopic';
+import { swiss } from 'mdx-deck/themes'
+import SetTopicAndQuestion from './components/SetTopicAndQuestion';
 import Question from './components/Question';
 import { Image, Appear, Notes } from 'mdx-deck';
+import {
+  Invert,
+  Split,
+  SplitRight,
+  Horizontal,
+  FullScreenCode,
+} from 'mdx-deck'
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+export const theme = swiss;
+
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
 
 ---
 
+<Split>
+
+  # Demo
+
+  [https://topics-voting-gpb7nqwtva-uc.a.run.app/](https://topics-voting-gpb7nqwtva-uc.a.run.app/)
+
+  ![](https://static-bzaem6kli.now.sh/qrcode.png)
+
+</Split>
+
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+
+---
 # About Me
 
-- To define
+- Software Engineer at Farfetch
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
 
 ---
 
-# Introduction
+# Main topics
 
 * Serverless
 * SPAs
 * GraphQL
-* Integrations
 * Deployment
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
 
 ---
 
-# Subscription
+# Some Context
 
-<Question question={''} />
+- Constantly evolving technology
+- Too many buzz words - Overwhelming
+- Hard time to quickly develop ideas
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} question={'303a9643-3d69-4382-a7d5-7ae94e2df5b6'} />
 
 ---
 
-# Introduction
+## Quiz Time
 
-import qrcode from './static/qrcode.png';
+<Question question={'303a9643-3d69-4382-a7d5-7ae94e2df5b6'} />
 
-<Appear>
-  <span>Preview</span>
-  <Image size={'350px'} src={qrcode} />
-</Appear>
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} question={'303a9643-3d69-4382-a7d5-7ae94e2df5b6'} />
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+---
+
+# Test
+
+- test
+
+<br/>
+
+<Question question={'e45c5c6a-a10e-4756-90b2-143ff17ff180'} />
+
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} question={'e45c5c6a-a10e-4756-90b2-143ff17ff180'} />
 
 ---
 
@@ -62,7 +93,7 @@ import qrcode from './static/qrcode.png';
   Notes about serverless
 </Notes>
 
-<SetTopic topic={'2136d37c-d1d4-4dd5-a9eb-70155576cbbe'} />
+<SetTopicAndQuestion topic={'2136d37c-d1d4-4dd5-a9eb-70155576cbbe'} />
 
 ---
 
@@ -72,8 +103,9 @@ import qrcode from './static/qrcode.png';
   - React Framework with SSR capabilities
   - Serverless mode - since version 8
     - Page as an independently deployable unit (lambda).
+    - After SSR of the pages they act as a SPA
 
-<SetTopic topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
+<SetTopicAndQuestion topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
 
 ---
 
@@ -86,7 +118,7 @@ import qrcode from './static/qrcode.png';
 
   ![](https://miro.medium.com/max/1454/1*3e9V8u5vK1E_KHB0dk_8Nw.png)
 
-<SetTopic topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
+<SetTopicAndQuestion topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
 
 ---
 
@@ -98,7 +130,7 @@ import qrcode from './static/qrcode.png';
   
   [Create and Deploy Serverless SPAs with Next.js on OpenFaaS or Knative (Google Cloud Run)](https://medium.com/@johnnyeric/create-and-deploy-serverless-spas-with-next-js-on-openfaas-or-knative-google-cloud-run-4b32a073292b)
 
-<SetTopic topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
+<SetTopicAndQuestion topic={'8ca7c369-2f5d-4d5b-9335-8486a7ec5328'} />
 
 ---
 
@@ -108,7 +140,7 @@ import qrcode from './static/qrcode.png';
 - Schemas
 - Realtime subscriptions
 
-<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+<SetTopicAndQuestion topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
 
 ---
 
@@ -117,7 +149,7 @@ import qrcode from './static/qrcode.png';
 - A server runtime to serve the API
 - Unified endpoint
 
-<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+<SetTopicAndQuestion topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
 
 ---
 
@@ -130,7 +162,7 @@ import qrcode from './static/qrcode.png';
 - Authorization
 - 3 Factor app
 
-<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+<SetTopicAndQuestion topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
 
 ---
 
@@ -144,7 +176,7 @@ import qrcode from './static/qrcode.png';
 
 [3 factor app](https://3factor.app/)
 
-<SetTopic topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
+<SetTopicAndQuestion topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} />
 
 ---
 
@@ -157,7 +189,7 @@ import architecture from './static/architecture.png';
   <Image size={'350px'} src={architecture} />
 </Appear>
 
-<SetTopic topic={'8646ba53-d05d-4b88-9030-b1c88aaf47a0'} />
+<SetTopicAndQuestion topic={'8646ba53-d05d-4b88-9030-b1c88aaf47a0'} />
 
 ---
 
@@ -169,7 +201,7 @@ import architecture from './static/architecture.png';
 - Serverless function to set the current topic (Hosted on Cloud Run)
 - SPA (Hosted on Cloud Run)
 
-<SetTopic topic={'ea05d876-326c-43ae-8b75-e76ccd0e71f2'} />
+<SetTopicAndQuestion topic={'ea05d876-326c-43ae-8b75-e76ccd0e71f2'} />
 
 ---
 
@@ -185,7 +217,7 @@ import architecture from './static/architecture.png';
 - Tag image to [gcr.io](http://gcr.io) registry
 - Deploy to Cloud Run
 
-<SetTopic topic={'ea05d876-326c-43ae-8b75-e76ccd0e71f2'} />
+<SetTopicAndQuestion topic={'ea05d876-326c-43ae-8b75-e76ccd0e71f2'} />
 
 ---
 
@@ -194,7 +226,7 @@ import architecture from './static/architecture.png';
 - Possibility to compose serverless architectures in simple ways
 - Flexibility
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
 
 ---
 
@@ -204,4 +236,4 @@ import architecture from './static/architecture.png';
   <span><h2>Questions?</h2></span>
 </Appear>
 
-<SetTopic topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
