@@ -49,16 +49,17 @@ export default ({ question }) => {
   const option2 = questionResponse && questionResponse.option2;
   const answer1 = questions && questions[0] && questions.filter(q => q.answer === 1)[0];
   const answer2 = questions && questions[0] && questions.filter(q => q.answer === 2)[0];
-  const totalCount = (answer1 && answer1.count) + (answer2 && answer2.count);
-  const p1 = answer1 && parseFloat((answer1 && answer1.count) / totalCount * 100).toFixed(2);
-  const p2 = answer2 && parseFloat((answer2 && answer2.count) / totalCount * 100).toFixed(2);
+  const count1 = (answer1 && answer1.count) || 0;
+  const count2 = (answer2 && answer2.count) || 0;
+  const totalCount = count1 + count2;
+  const p1 = answer1 && parseFloat(count1 / totalCount * 100).toFixed(2);
+  const p2 = answer2 && parseFloat(count2 / totalCount * 100).toFixed(2);
 
   return (
     <>
-      <span>Quiz: {title} </span>
-      <br />
+      <span>{title}</span>
+      <br/>
       <span>{option1} { p1 || 0 } %</span>
-      <br />
       <span>{option2} { p2 || 0 } %</span>
     </>
   )
