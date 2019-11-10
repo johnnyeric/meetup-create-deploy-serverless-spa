@@ -218,16 +218,18 @@ export default withGraphQL(() => {
 						<Loading />
 					) : (
 						<>
-							<Question
-								handleAnswer={answer}
-								currentQuestion={currentQuestion}
-							/>
 							{showVoting && (
-								<Vote
-									setAnswer={setAnswer}
-									selectedAnswer={selectedAnswer}
-									currentTopic={currentTopic}
-								/>
+								<>
+									<Question
+										handleAnswer={answer}
+										currentQuestion={currentQuestion}
+									/>
+									<Vote
+										setAnswer={setAnswer}
+										selectedAnswer={selectedAnswer}
+										currentTopic={currentTopic}
+									/>
+								</>
 							)}
 							{!showVoting && <Results topics={topics} />}
 						</>
