@@ -1,22 +1,18 @@
+import { SubscriptionClient } from 'subscriptions-transport-ws';
 import React, { useState, useEffect } from 'react';
 import useQuestion from '../utils/use-question-hook';
-import { SubscriptionClient } from 'subscriptions-transport-ws';
-const WebSocket = require('ws');
+import WebSocket from 'ws';
 
 const wsclient = new SubscriptionClient(
   'wss://serene-sea-87604.herokuapp.com/v1/graphql',
-  {
-    reconnect: true,
-    connectionParams: {
-      headers: {},
-    },
-  },
+  { reconnect: true },
   typeof window === 'undefined' ? WebSocket : window.WebSocket
 );
 
 export default ({ question }) => {
   const [questions, setQuestions] = useState({});
   const questionResponse = useQuestion(question);
+
   useEffect(() => {
     wsclient.request({
       query: `subscription ($question_id: uuid) {
@@ -32,7 +28,6 @@ export default ({ question }) => {
       variables: {
         question_id: question
       }
-      // Don't forget to check for an `errors` property in the next() handler
     }).subscribe({
       next: (data) => {
         setQuestions(data.data.meetup_question_with_answers);
@@ -41,7 +36,6 @@ export default ({ question }) => {
         console.error('errors', JSON.stringify(errors));
       },
     });
-    
   }, [question]);
 
   const title = questionResponse && questionResponse.title;
