@@ -1,10 +1,10 @@
 import { css, Global } from '@emotion/core';
+import { Results, Vote, Question, Loading } from '../components';
 import { useMutation, useSubscription } from '@apollo/react-hooks';
 import get from 'lodash/get';
 import gql from 'graphql-tag';
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { Results, Vote, Question, Loading } from '../components';
 import withGraphQL from '../lib/withGraphQL';
 
 const GET_CURRENT_PRESENTATION = gql`

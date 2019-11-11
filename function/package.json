@@ -1,13 +1,12 @@
 {
-  "name": "sample-event-trigger",
+  "name": "meetup-create-deploy-serverless-function",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Johnny Eric Amancio",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
     "graphql.js": "^0.6.4",

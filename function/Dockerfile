@@ -1,4 +1,5 @@
 FROM mhart/alpine-node:latest
+
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn

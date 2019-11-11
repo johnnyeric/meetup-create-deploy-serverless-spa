@@ -1,9 +1,8 @@
-const express = require('express');
 const bodyParser = require('body-parser');
+const express = require('express');
 const graphql = require('graphql.js');
 
 const app = express();
-
 const endpoint = 'https://serene-sea-87604.herokuapp.com/v1/graphql';
 const graph = graphql(endpoint, {
   asJSON: true
@@ -99,11 +98,6 @@ app.post('/set-current-question', async function (req, res) {
   }
 });
 
-
-app.get('/', function (req, res) {
-  res.send('Hello World - For Event Triggers, try a POST request?');
-});
-
-var server = app.listen(process.env.PORT || 8080, function () {
+app.listen(process.env.PORT || 8080, function () {
     console.log("server listening");
 });

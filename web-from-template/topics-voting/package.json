@@ -1,22 +1,18 @@
 {
   "name": "function",
   "version": "1.0.0",
-  "description": "",
   "main": "handler.js",
   "scripts": {
-    "build": "next build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "next build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Johnny Eric Amancio",
+  "license": "MIT",
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
     "@apollo/react-ssr": "^3.1.2",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
-    "rebass": "^4.0.7",
-    "@rebass/preset": "^4.0.5",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link": "^1.2.13",
