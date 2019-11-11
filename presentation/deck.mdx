@@ -1,23 +1,21 @@
-import { swiss } from 'mdx-deck/themes'
+## Create and Deploy
+
+## Serverless SPAs
+
 import SetTopicAndQuestion from './components/SetTopicAndQuestion';
 import Question from './components/Question';
-import { Image, Appear, Notes } from 'mdx-deck';
 import {
+  Image,
+  Appear,
+  Notes,
   Invert,
-  Split,
   SplitRight,
   Horizontal,
   FullScreenCode,
-} from 'mdx-deck'
-
-<Notes>export const theme = swiss;</Notes>
-
-<h2>Create and Deploy</h2>
-<h2>Serverless SPAs</h2>
+} from 'mdx-deck';
 
 <Horizontal>
   <img src="https://img.stackshare.io/service/6590/hasura_logo_vertical_black.png" alt="drawing" style="width:180px;margin-left: 10px;"/>
-  <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K2q0A5SX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/2elgd5zp07wkeilkna63.png" alt="drawing" style="width:260px;height:180px;;margin-left: 10px;"/>
   <img src="https://miro.medium.com/max/418/1*vMEcwH5CYFXdaX-TTkfgKw.png" alt="drawing" style="width:200px;;margin-left: 10px;"/>
   <img src="https://miro.medium.com/max/7126/1*MLkTe5tPVv5BhXERsOO-MQ.png" alt="drawing" style="width:380px;height:160px;;margin-left: 10px;"/>
 </Horizontal>
@@ -26,71 +24,56 @@ import {
 
 ---
 
-<Split>
+### About me
 
-  <span>
-    <h3>About me</h3>
-    <h4>@johnnyeric</h4>
-    <br/>
-    <span>Software Engineer @Farfetch</span>
-    <br/>
-    <br/>
-    <span>Enjoy learning different technologies</span>
-  </span>
+#### @johnnyeric
 
-  <br />
+<span>Software Engineer @Farfetch</span>
+<br/>
+<br/>
+<span>Enjoy learning different technologies</span>
 
-  ### Demo
-
-  [https://meetup.johnnyeric.com](https://meetup.johnnyeric.com/)
-
-  ![](https://static-qrrg2apkb.now.sh/qrcode.png)
-
-</Split>
-
-<SetTopicAndQuestion topic={'9a1eb860-227a-4f1f-b1fb-880419bbe33a'} />
-
----
-
-### Main topics
-<ul>
-  <Appear>
-    <li>Serverless</li>
-    <li>SPAs</li>
-    <li>GraphQL</li>
-    <li>Deployment</li>
-  </Appear>
-</ul>
-
-<SetTopicAndQuestion topic={'9a1eb860-227a-4f1f-b1fb-880419bbe33a'} />
-
----
-
-### Some Context
-
-- Constantly evolving technology
-- Overwhelming
-- Hard time to quickly develop ideas
-
-<SetTopicAndQuestion topic={'f05f513a-19b6-46ac-b259-2ea4df0df2df'} />
-
----
-
-### Quiz Time
-
-<Question question={'303a9643-3d69-4382-a7d5-7ae94e2df5b6'} />
-
-<SetTopicAndQuestion topic={'f05f513a-19b6-46ac-b259-2ea4df0df2df'} question={'303a9643-3d69-4382-a7d5-7ae94e2df5b6'} />
+<SetTopicAndQuestion />
 
 ---
 
 ### What this talk is about
 
-- Focus on connecting some different technologies
-- Define powerful architectures in simple ways
-- Share your ideas with the world
+<ul>
+  <Appear>
+    <li>Developing new ideas is hard. Why?</li>
+    <li>Modern technologies that make things easier</li>
+    <li>
+      <span>Focus on connecting some different concepts</span>
+      <ul>
+        <li>Serverless (Google Cloud Run)</li>
+        <li>GraphQL (Hasura)</li>
+        <li>SPAs (Project Template with Next.js)</li>
+      </ul>
+    </li>
+  </Appear>
+</ul>
+
+<br/>
+
+<img src="https://hackernoon.com/hn-images/1*RHQ7lpGDV_M3yWRa9DiR2g.png" alt="drawing" style="width:180px;margin-left: 10px;"/>
 
 <SetTopicAndQuestion topic={'f05f513a-19b6-46ac-b259-2ea4df0df2df'} />
+
+---
+
+### What this talk is about
+
+<ul>
+  <Appear>
+    <li>Promotion of an architecture pattern</li>
+    <li>Demonstration of a web application built using it</li>
+    <li>Google Cloud Run, the new serverless kid on the block</li>
+    <li>Let's share your ideas with the world!</li>
+  </Appear>
+</ul>
+
+<SetTopicAndQuestion />
 
 ---
 
@@ -102,36 +85,86 @@ import {
 
 @johnnyeric
 
-<SetTopicAndQuestion topic={'f05f513a-19b6-46ac-b259-2ea4df0df2df'} />
+<SetTopicAndQuestion />
 
 ---
 
+<Split>
+
+  <div>
+    <h3>Topic Voting</h3>
+    <h5>Serverless Application</h5>
+  </div>
+
+  [meetup.johnnyeric.com](https://meetup.johnnyeric.com/)
+
+  ![](https://static-qrrg2apkb.now.sh/qrcode.png)
+
+</Split>
+
+<SetTopicAndQuestion topic={'9a1eb860-227a-4f1f-b1fb-880419bbe33a'} />
+
+---
+
+### Quiz Time
+
 <Question question={'78539f11-cebe-436f-b0cb-931e56ddaf1a'} />
 
-<SetTopicAndQuestion question={'78539f11-cebe-436f-b0cb-931e56ddaf1a'} />
+<SetTopicAndQuestion topic={'9a1eb860-227a-4f1f-b1fb-880419bbe33a'} question={'78539f11-cebe-436f-b0cb-931e56ddaf1a'} />
+
+---
+
+### Quiz Time
+
+<Question question={'5626bffb-8387-4ac5-abb3-d5a8067deedc'} />
+
+<SetTopicAndQuestion topic={'d87db03e-3f2c-46fb-a675-90ba248c8b97'} question={'5626bffb-8387-4ac5-abb3-d5a8067deedc'} />
+
+---
+
+### Challenges when building ideas
+
+- Constantly evolving technology
+- Overwhelming
+- Hard time to quickly develop ideas
+
+<SetTopicAndQuestion topic={'d87db03e-3f2c-46fb-a675-90ba248c8b97'} />
 
 ---
 
 ### Serverless
 
-- Abstract complexity from managing Infrastructure
-- Scale from 0 to n
-  - Scale up when receive requests
-  - Scale down when idle
+- What is Serverless? No Machines? No VMs?
+  - Abstract complexity from managing Infrastructure
+  - Scalability
+  - Lower costs
 
 <br/>
-
 <img src="https://miro.medium.com/max/7126/1*MLkTe5tPVv5BhXERsOO-MQ.png" alt="drawing" style="width:400px;height:200px;"/>
-
-<Notes>
-  Notes about serverless
-</Notes>
 
 <SetTopicAndQuestion topic={'2136d37c-d1d4-4dd5-a9eb-70155576cbbe'} />
 
 ---
 
-### Project template
+### Quiz Time
+
+<Question question={'06ae35a3-b12f-4bcc-9fe3-c3f02724bc26'} />
+
+<SetTopicAndQuestion topic={'2136d37c-d1d4-4dd5-a9eb-70155576cbbe'} question={'06ae35a3-b12f-4bcc-9fe3-c3f02724bc26'} />
+
+---
+
+### SPA
+
+- Single Page Application
+- More like "single server side render application"
+- Application flow managed on the browser
+  
+<SetTopicAndQuestion topic={'ea5bed17-c8c9-45e2-9d72-c2e0901843e7'} />
+
+---
+
+## Project template
 
 - OpenFaaS template for Next.js on Serverless mode  
 - Base setup for SPAs served with Next.js on Serverless mode
@@ -159,9 +192,9 @@ import {
 
 ### Project template
 
-- Opensource Serverless platform
-- Containers as unit of deployment
+- OpenSource Serverless platform
 - Function templates
+- Command line tool for deployments
 
 <br/>
 
@@ -171,13 +204,20 @@ import {
 
 ---
 
-### GraphQL
+### Quiz Time
 
-- Hasura
-  - OpenSource
-  - Automatic GraphQL API based on PostgreSQL tables
-  - Triggers
-  - Authorization
+<Question question={'f9e1dfc6-11d0-4acd-ac17-cb9a6fb771f4'} />
+
+<SetTopicAndQuestion topic={'c4a16982-e739-4a8c-b218-576d4ff51245'} question={'f9e1dfc6-11d0-4acd-ac17-cb9a6fb771f4'} />
+
+---
+
+### GraphQL (Hasura)
+
+- OpenSource
+- Automatic GraphQL API based on PostgreSQL tables
+- Triggers
+- Authorization
 
 <img src="https://img.stackshare.io/service/6590/hasura_logo_vertical_black.png" alt="drawing" style="width:140px;"/>
 
@@ -193,13 +233,13 @@ import {
   2. Reliable Eventing
   3. Async Serverless
 
-<SetTopicAndQuestion topic={'8646ba53-d05d-4b88-9030-b1c88aaf47a0'} />
+<SetTopicAndQuestion topic={'d87db03e-3f2c-46fb-a675-90ba248c8b97'} />
 
 ---
 
 ### Application Architecture
 
-<img src="https://static-qrrg2apkb.now.sh/3factor-architecture.png" alt="drawing" style="width:1160px;"/>
+<img src="https://static-qrrg2apkb.now.sh/3factor-architecture.png" alt="drawing" style="width:1600px;"/>
 
 <SetTopicAndQuestion topic={'8646ba53-d05d-4b88-9030-b1c88aaf47a0'} />
 
@@ -208,7 +248,7 @@ import {
 ### Main Components
 
 - Hasura instance
-  - Hosted on Heroku
+  - Hosted in cloud (Persistent VM)
 - Serverless function to set the current topic and question
   - Hosted on Google Cloud Run
 - SPA
@@ -239,8 +279,8 @@ import {
 
 ### Conclusion
 
-- Simple serverless architectures
-- Build quickly
+- Simple serverless architecture
+- Build projects quickly
 - Automate things
 - Sharing of ideas
 
@@ -259,7 +299,7 @@ import {
 - 3 Factor App
 - [Create and Deploy Serverless SPAs with Next.js on OpenFaaS or Knative (Google Cloud Run)](https://medium.com/@johnnyeric/create-and-deploy-serverless-spas-with-next-js-on-openfaas-or-knative-google-cloud-run-4b32a073292b)
 
-<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion />
 
 ---
 
@@ -269,4 +309,4 @@ import {
   <span><h2>Questions?</h2></span>
 </Appear>
 
-<SetTopicAndQuestion topic={'5f219fdb-915e-4f3f-b07c-f3dac7f58f6e'} />
+<SetTopicAndQuestion />
