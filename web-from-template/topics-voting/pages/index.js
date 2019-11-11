@@ -192,7 +192,7 @@ export default withGraphQL(() => {
 						width: 100%;
 						height: 100%;
 						user-select: none;
-						background-image: url('../static/background.jpg');
+						background-image: url('background.png');
 						background-size: cover;
 					}
 				`}
