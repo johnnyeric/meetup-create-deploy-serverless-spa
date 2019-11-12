@@ -6,10 +6,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "pdf": "mdx-deck pdf deck.mdx",
+    "serve": "serve -p 8080 public",
+    "publish-deck": "gh-pages -d public"
   },
   "devDependencies": {
-    "mdx-deck": "^3.0.13"
+    "gh-pages": "^2.1.1",
+    "mdx-deck": "^3.0.13",
+    "serve": "^11.2.0"
   },
   "dependencies": {
     "graphql.js": "^0.6.5",
