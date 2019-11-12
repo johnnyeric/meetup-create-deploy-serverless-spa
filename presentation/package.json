@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "graphql.js": "^0.6.5",
+    "lodash": "^4.17.15",
     "subscriptions-transport-ws": "^0.9.16",
     "ws": "^7.2.0"
   }

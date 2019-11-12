@@ -1,4 +1,5 @@
 import { SubscriptionClient } from 'subscriptions-transport-ws';
+import get from 'lodash/get';
 import React, { useState, useEffect } from 'react';
 import useQuestion from '../utils/use-question-hook';
 import WebSocket from 'ws';
@@ -10,7 +11,7 @@ const wsclient = new SubscriptionClient(
 );
 
 export default ({ question }) => {
-  const [questions, setQuestions] = useState({});
+  const [questions, setQuestions] = useState([]);
   const questionResponse = useQuestion(question);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export default ({ question }) => {
       }
     }).subscribe({
       next: (data) => {
-        setQuestions(data.data.meetup_question_with_answers);
+        setQuestions(get(data, 'data.meetup_question_with_answers', []));
       },
       error: (errors) => {
         console.error('errors', JSON.stringify(errors));
@@ -38,9 +39,9 @@ export default ({ question }) => {
     });
   }, [question]);
 
-  const title = questionResponse && questionResponse.title;
-  const option1 = questionResponse && questionResponse.option1;
-  const option2 = questionResponse && questionResponse.option2;
+  const title = get(questions, '[0].title', get(questionResponse, 'title'));
+  const option1 = get(questions, '[0].option1', get(questionResponse, 'option1'));
+  const option2 = get(questions, '[0].option2', get(questionResponse, 'option2'))
   const answer1 = questions && questions[0] && questions.filter(q => q.answer === 1)[0];
   const answer2 = questions && questions[0] && questions.filter(q => q.answer === 2)[0];
   const count1 = (answer1 && answer1.count) || 0;
